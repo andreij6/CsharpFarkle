@@ -10,5 +10,10 @@ namespace FarkleClassLib
     {
         public string Name { get; set; }
         public int Score { get; set; }
+
+        public Player()
+        {
+            Score = 0;
+        }
     }
 }

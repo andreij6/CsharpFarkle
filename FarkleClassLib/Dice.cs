@@ -8,24 +8,29 @@ namespace FarkleClassLib
 {
     public class Dice
     {
-        public static int Roll(int numberOfDice = 1)
+        public static int HeadsOrTails()
         {
-            var range = Enumerable.Range(1, 6);
-            if( !range.Contains(numberOfDice))
-            {
-                return 0;
-            }
-
-            int value = 0;
             Random r = new Random();
-
-            while (numberOfDice > 0)
-            {
-                value += r.Next(1, 6);
-                numberOfDice -= 1;
-            }
+            int value = r.Next(1, 6);
 
             return value;
         }
+
+        public static List<int> Roll(int numberOfDi)
+        {
+            Random r = new Random();
+            List<int> rolledValues = new List<int>();
+
+            while(numberOfDi > 0)
+            {
+                rolledValues.Add(r.Next(1, 7));
+                numberOfDi--;
+            }
+
+            return rolledValues;
+                
+        }
+
+
     }
 }

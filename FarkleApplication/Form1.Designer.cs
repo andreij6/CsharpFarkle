@@ -39,6 +39,7 @@
             this.PlayerOneWins = new System.Windows.Forms.Label();
             this.PlayerTwoWins = new System.Windows.Forms.Label();
             this.rollButton1 = new System.Windows.Forms.Button();
+            this.listOfDicelabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FlipButton
@@ -148,11 +149,21 @@
             this.rollButton1.Visible = false;
             this.rollButton1.Click += new System.EventHandler(this.rollButton1_Click);
             // 
+            // listOfDicelabel
+            // 
+            this.listOfDicelabel.AutoSize = true;
+            this.listOfDicelabel.Location = new System.Drawing.Point(106, 183);
+            this.listOfDicelabel.Name = "listOfDicelabel";
+            this.listOfDicelabel.Size = new System.Drawing.Size(0, 13);
+            this.listOfDicelabel.TabIndex = 11;
+            this.listOfDicelabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 261);
+            this.Controls.Add(this.listOfDicelabel);
             this.Controls.Add(this.rollButton1);
             this.Controls.Add(this.PlayerTwoWins);
             this.Controls.Add(this.PlayerOneWins);
@@ -184,6 +195,7 @@
         private System.Windows.Forms.Label PlayerOneWins;
         private System.Windows.Forms.Label PlayerTwoWins;
         private System.Windows.Forms.Button rollButton1;
+        private System.Windows.Forms.Label listOfDicelabel;
     }
 }
 

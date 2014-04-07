@@ -32,7 +32,7 @@ namespace FarkleApplication
         {
             bool setup = false;
 
-            if(ran[0] && ran[1])
+            if(playersSet[0] && playersSet[1])
             {
                 setup = true;
                 FlipButton.Enabled = true;

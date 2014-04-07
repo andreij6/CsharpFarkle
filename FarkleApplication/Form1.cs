@@ -13,10 +13,10 @@ namespace FarkleApplication
 {
     public partial class Form1 : Form
     {
-        bool[] ran = {false, false};
-        
+        bool[] playersSet = {false, false};
         Player player1 = new Player();
         Player player2 = new Player();
+
 
         public Form1()
         {
@@ -25,7 +25,7 @@ namespace FarkleApplication
 
         private void setPlayerOneButton_Click(object sender, EventArgs e)
         {
-            ran[0] = true;
+            playersSet[0] = true;
             SetPlayerName(playerOneLabel, textBox1, setPlayerOneButton, player1);
            
 
@@ -34,7 +34,7 @@ namespace FarkleApplication
 
         private void setPlayerTwoButton_Click(object sender, EventArgs e)
         {
-            ran[1] = true;
+            playersSet[1] = true;
             SetPlayerName(playerTwoLabel, textBox2, setPlayerTwoButton, player2);
 
             PlayerTwoWins.Text = String.Format("{0}'s roll", player2.Name);
@@ -42,7 +42,7 @@ namespace FarkleApplication
 
         private void FlipButton_Click(object sender, EventArgs e)
         {
-            if( Dice.Roll() > 3) 
+            if( Dice.HeadsOrTails() > 3) 
             {
                 PlayerOneWins.Visible = true;
             } else {
@@ -54,7 +54,17 @@ namespace FarkleApplication
 
         private void rollButton1_Click(object sender, EventArgs e)
         {
+            var values = Dice.Roll(6);
 
+            string message = " ";
+
+            foreach (var item in values)
+            {
+                message += item;
+            }
+
+            listOfDicelabel.Text = message;
+            listOfDicelabel.Visible = true;
         }
 
     }
